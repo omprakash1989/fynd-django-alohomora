@@ -1,36 +1,31 @@
-  # ${1:fynd-django-alohomora}
+# Project Name
 
+TODO: Write a project description
 
-    ## Fynd Alohomora Package
+## Installation
 
-    A python package for Fynd Alohomora connector.
-    This package is only for django framework.
-    Fynd alohomora is the centralized Authentication system for several applications of Fynd.
+TODO: Describe the installation process
 
+## Usage
 
-    ## Usage
+TODO: Write usage instructions
 
-    Import the module
+## Contributing
 
-    from alohomora import check_if_authenticated
+1. Fork it!
+2. Create your feature branch: `git checkout -b my-new-feature`
+3. Commit your changes: `git commit -am 'Add some feature'`
+4. Push to the branch: `git push origin my-new-feature`
+5. Submit a pull request :D
 
-    Use it as a decorator
+## History
 
-    ```
-    check_if_authenticated(state='some_state', permission='some_permission')
-    def some_method()
-        """
-        Your code
-        """
-        return something
+TODO: Write history
 
-    ```
+## Credits
 
-    ## SETTINGS
+TODO: Write credits
 
-    Settings can be overridden.
+## License
 
-    ALOHOMORA_REDIS_HOST: IP of the alohomora redis host.
-    ALOHOMORA_REDIS_PORT: PORT of the alohomora redis host.
-    ALOHOMORA_REDIS_DB: DB of the alohomora redis host.
-    IS_AUTH_ENABLED: TO enable or disable alohomora auth system.
+TODO: Write license
