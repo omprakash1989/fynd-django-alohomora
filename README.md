@@ -1,6 +1,3 @@
-<snippet>
-  <content><![CDATA[
-
   # ${1:fynd-django-alohomora}
 
 
@@ -37,6 +34,3 @@
     ALOHOMORA_REDIS_PORT: PORT of the alohomora redis host.
     ALOHOMORA_REDIS_DB: DB of the alohomora redis host.
     IS_AUTH_ENABLED: TO enable or disable alohomora auth system.
-]]></content>
-  <tabTrigger>readme</tabTrigger>
-</snippet>
