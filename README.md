@@ -14,7 +14,7 @@ from alohomora import check_if_authenticated
 Use it as a decorator
 
 ```
-check_if_authenticated(state='some_state', permission='some_permission')
+@check_if_authenticated(state='some_state', permission='some_permission')
 def some_method()
   """
   Your code
