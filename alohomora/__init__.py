@@ -15,15 +15,21 @@ def check_if_authenticated(**details):
             auth_class = Authenticate()
             try:
                 if auth_class.auth_enabled:
-                    try:
-                        auth_cookie = request.request.COOKIES[auth_class.session_id]
-                    except KeyError:
-                        return json_response({"message": "not logged in", "success": False}, status=401, cookie=None)
-                    except AttributeError:
+                    api_session_token = request.request.headers.get('apiKey')
+                    if not api_session_token:
+                        api_session_token = request.headers.get('apiKey')
+                    if not api_session_token:
                         try:
-                            auth_cookie = request.COOKIES[auth_class.session_id]
+                            auth_cookie = request.request.COOKIES[auth_class.session_id]
                         except KeyError:
                             return json_response({"message": "not logged in", "success": False}, status=401, cookie=None)
+                        except AttributeError:
+                            try:
+                                auth_cookie = request.COOKIES[auth_class.session_id]
+                            except KeyError:
+                                return json_response({"message": "not logged in", "success": False}, status=401, cookie=None)
+                    else:
+                        auth_cookie = api_session_token
 
                     user_info = auth_class._alohomora_redis.hgetall(auth_class.session_prefix + auth_cookie)
 
